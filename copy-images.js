@@ -26,4 +26,4 @@ fs.readdirSync(postsDir).forEach((postFolder) => {
   }
 });
 
-console.log('圖片已成功複製到 public/posts 目錄下');
+console.log('All images are copied to public/posts/{slugs} directory!');

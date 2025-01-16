@@ -14,13 +14,8 @@ export default async function Page(props: {
   const data = await getPost(params.slug);
 
   return (
-    <div className="">
-      <div className="col-span-full space-y-3 lg:col-span-4">
-        <h1 className=" text-2xl font-medium capitalize text-gray-200">
-          {data.title}
-        </h1>
-      </div>
-      <div className="-order-1 col-span-full lg:order-none lg:col-span-2"></div>
+    <div className="post-prose">
+      <h1 className=" text-2xl font-medium capitalize ">{data.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: data.contentHtml || '' }} />
     </div>
   );

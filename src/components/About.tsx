@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <section className="container mx-auto grid grid-cols-1 gap-8 px-6 py-12 md:grid-cols-2">
+    <section className="container mx-auto grid grid-cols-1 gap-8 py-12 md:grid-cols-2">
       <div className="flex flex-col justify-center">
         <h3 className="mb-4 text-xl font-bold uppercase">ABOUT</h3>
         <h2 className="mb-6 text-3xl font-bold leading-snug">

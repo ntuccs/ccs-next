@@ -7,10 +7,10 @@ import Sidebar from './SideCloumn';
 // Recent Contributors Component
 export default function Hero() {
   const posts = getPosts();
-  const featurePost = posts[0];
-  const relatedPosts = posts.slice(1, 3);
+  const featurePost = posts.filter((post) => post?.isHero)[0];
+  const relatedPosts = posts.filter((post) => !post?.isHero).slice(1, 3);
   return (
-    <section className="container mx-auto grid grid-cols-1 gap-8 px-6 py-12 md:grid-cols-4">
+    <section className="container mx-auto grid grid-cols-1 gap-8 py-12 md:grid-cols-4">
       <Sidebar />
       <div className="col-span-1 space-y-6 md:col-span-3">
         <div className="mx-auto grid gap-12 px-4 py-8 lg:grid-cols-[1fr,400px]">

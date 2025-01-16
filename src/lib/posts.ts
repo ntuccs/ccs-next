@@ -14,7 +14,9 @@ interface Post {
   title: string;
   date: string;
   thumbnail?: string;
+  label?: string;
   excerpt?: string;
+  isHero?: string;
   category?: string;
   tags?: string[];
   contentHtml?: string;
