@@ -12,7 +12,7 @@ interface ArticleCardProps {
   href: string;
 }
 
-export function ArticleCard({
+export default function ArticleCard({
   category,
   title,
   excerpt,
@@ -30,7 +30,7 @@ export function ArticleCard({
             fill
             className="object-cover transition-transform hover:scale-105"
           />
-          <div className="bg-primary/90 absolute left-4 top-4">{category}</div>
+          <div className="absolute left-4 top-4 bg-primary/90">{category}</div>
         </div>
         <div className="p-4">
           <h3 className="mb-2 line-clamp-2 text-xl font-semibold">{title}</h3>

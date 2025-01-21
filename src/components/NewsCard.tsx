@@ -8,6 +8,7 @@ interface NewsCardProps {
   title: string;
   description?: string;
   date: string;
+  tags?: string[];
 }
 
 export default function NewsCard({
@@ -17,11 +18,12 @@ export default function NewsCard({
   title,
   description,
   date,
+  tags,
 }: NewsCardProps) {
   return (
     <Link href={slug} className="block">
-      <article className="group flex gap-6 rounded bg-white p-6 shadow-lg">
-        <div className="relative h-48 w-72 flex-shrink-0 overflow-hidden rounded">
+      <article className="group flex gap-6 rounded-md bg-white px-6 py-4 shadow-lg">
+        <div className="relative h-60 w-80 flex-shrink-0 overflow-hidden rounded">
           <Image
             src={imageUrl}
             alt={imageAlt}
@@ -29,15 +31,24 @@ export default function NewsCard({
             className="rounded object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-
         <div className="flex flex-grow flex-col">
-          <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900">
+          <h2 className="mb-4 text-2xl font-bold leading-tight text-gray-900">
             {title}
           </h2>
-          <div className="mb-2 flex items-center gap-2 text-sm text-gray-600">
-            <span>{date}</span>
+          <div className="mb-4 flex items-center ">
+            {tags &&
+              tags?.length > 0 &&
+              tags?.map((t) => (
+                <div
+                  key={t}
+                  className="mr-2 inline-block rounded bg-primary px-2 py-1 text-sm text-white last:mr-3"
+                >
+                  {t}
+                </div>
+              ))}
+            {date && <time className="block text-sm">{date}</time>}
           </div>
-          <p className="line-clamp-2 text-sm text-gray-600">{description}</p>
+          <p className="line-clamp-2 text-base text-gray-600">{description}</p>
         </div>
       </article>
     </Link>

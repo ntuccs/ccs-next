@@ -3,10 +3,8 @@ import members from '#/data/members';
 
 export default function Members() {
   return (
-    <section className="container mx-auto px-6 py-12">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold">MEMBERS</h2>
-      </div>
+    <section className="container mx-auto py-12">
+      <h2 className="text-3xl font-bold text-black">Members</h2>
       <div className="relative mt-8">
         <div className="flex justify-evenly space-x-6 overflow-x-auto">
           {members.map((member, index) => (

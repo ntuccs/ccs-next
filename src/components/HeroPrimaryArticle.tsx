@@ -8,20 +8,24 @@ interface FeaturedArticleProps {
   category?: string;
   imageUrl?: string;
   href: string;
+  tags?: string[];
+  isHero?: boolean;
 }
 
-export function FeaturedArticle({
+export default function FeaturedArticle({
   title,
   excerpt = '',
   date,
   category = '',
   imageUrl = '',
   href,
+  tags,
+  isHero = false,
 }: FeaturedArticleProps) {
   return (
     <article className="relative">
       <Link href={href}>
-        <div className="relative mb-6 aspect-[16/9] overflow-hidden rounded-lg">
+        <div className="relative mb-2 aspect-[16/9] overflow-hidden rounded-lg">
           <Image
             src={imageUrl}
             alt={title}
@@ -30,14 +34,28 @@ export function FeaturedArticle({
             priority
           />
         </div>
-        {/* <div>{category}</div> */}
-        <h1 className="hover:text-primary mt-4 text-2xl font-bold leading-tight tracking-tight">
+        <h1
+          className={`mb-2 hover:text-primary ${isHero ? 'text-4xl' : 'text-2xl'} font-bold leading-tight tracking-tight`}
+        >
           {title}
         </h1>
-        <p className="text-muted-foreground text-md mt-4 line-clamp-2">
-          {excerpt}
-        </p>
-        <time className="text-muted-foreground mt-4 block text-sm">{date}</time>
+        {/* <div>{category}</div> */}
+        <div className="mb-2 flex items-center ">
+          <div>
+            {tags &&
+              tags?.length > 0 &&
+              tags?.map((t) => (
+                <div
+                  key={t}
+                  className="mr-2 inline-block rounded bg-primary px-2 py-1 text-sm text-white last:mr-3"
+                >
+                  {t}
+                </div>
+              ))}
+          </div>
+          {date && <time className="block text-sm">{date}</time>}
+        </div>
+        {excerpt && <p className="text-md line-clamp-2">{excerpt}</p>}
       </Link>
     </article>
   );

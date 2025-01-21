@@ -9,14 +9,14 @@ const POSTS_DIRECTORY = 'src/posts';
 
 const postsDirectory = path.join(process.cwd(), POSTS_DIRECTORY);
 
-interface Post {
+export interface Post {
   id: string;
   title: string;
   date: string;
   thumbnail?: string;
   label?: string;
   excerpt?: string;
-  isHero?: string;
+  isHero?: boolean;
   category?: string;
   tags?: string[];
   contentHtml?: string;
