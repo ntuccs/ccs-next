@@ -3,20 +3,20 @@ import { inter } from '#/lib/fonts';
 import { Metadata } from 'next';
 import Header from '#/components/Header';
 import Footer from '#/components/Footer';
+import { website } from '#/data/meta';
+
+const { title, description } = website;
 
 export const metadata: Metadata = {
   title: {
-    default: 'Next.js App Router',
-    template: '%s | Next.js App Router',
+    default: title,
+    template: `%s | ${title}`,
   },
-  metadataBase: new URL('https://app-router.vercel.app'),
-  description:
-    'A playground to explore new Next.js App Router features such as nested layouts, instant loading states, streaming, and component level data fetching.',
+  description,
   openGraph: {
-    title: 'Next.js App Router Playground',
-    description:
-      'A playground to explore new Next.js App Router features such as nested layouts, instant loading states, streaming, and component level data fetching.',
-    images: [`/api/og?title=Next.js App Router`],
+    title,
+    description,
+    images: [`/about.jpg`],
   },
   twitter: {
     card: 'summary_large_image',

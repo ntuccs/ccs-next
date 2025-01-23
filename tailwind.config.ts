@@ -16,31 +16,31 @@ export default {
       // https://vercel.com/design/color
       colors: {
         gray: colors.zinc,
-        'gray-1000': 'rgb(17,17,19)',
-        'gray-1100': 'rgb(10,10,11)',
         primary: colors.red[900],
-        vercel: {
-          pink: '#FF0080',
-          blue: '#0070F3',
-          cyan: '#50E3C2',
-          orange: '#F5A623',
-          violet: '#7928CA',
-        },
       },
       typography: {
         DEFAULT: {
           css: {
             a: {
-              color: '#3182ce', // 鏈接文字顏色
+              color: '#3182ce',
               '&:hover': {
-                color: '#2b6cb0', // 鏈接懸停顏色
+                color: '#2b6cb0',
               },
             },
           },
         },
       },
       maxWidth: {
-        '4/5': '80%',
+        '90%': '90%',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        fadeInUp: 'fadeInUp 0.7s ease-out',
       },
       backgroundImage: ({ theme }) => ({
         'vc-border-gradient': `radial-gradient(at left top, ${theme(
@@ -49,5 +49,5 @@ export default {
       }),
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/typography')],
 } satisfies Config;

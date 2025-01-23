@@ -2,15 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+}
+
 @layer components {
   .post-prose {
-    @apply prose;
-
-    max-width: 80%;
-    margin: auto;
-  }
-
-  h1 {
-    @apply text-3xl font-bold text-black;
+    @apply prose m-auto max-w-90%;
   }
 }

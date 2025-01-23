@@ -1,16 +1,5 @@
 import SideColumn from '#/components/SideCloumn';
 import React from 'react';
-import Image from 'next/image';
-
-const title = 'Client Context';
-
-export const metadata = {
-  title,
-  openGraph: {
-    title,
-    images: [`/api/og?title=${title}`],
-  },
-};
 
 export default async function Layout({
   children,
