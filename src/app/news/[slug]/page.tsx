@@ -1,32 +1,53 @@
 // import { notFound } from 'next/navigation';
 import SideCloumn from '#/components/SideCloumn';
 import { getAllPostSlugs, getPost } from '#/lib/posts';
+import { navigation } from '#/data/meta';
+import type { Metadata, ResolvingMetadata } from 'next';
 
-export async function generateStaticParams() {
-  const allPostsData = getAllPostSlugs();
-  return allPostsData;
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = (await params).slug;
+  const data = await getPost(slug);
+  const { title, thumbnail = '' } = data;
+
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title,
+    openGraph: {
+      title,
+      images: [thumbnail, ...previousImages],
+    },
+  };
 }
 
-export default async function Page(props: {
-  params: Promise<{ slug: string }>;
-}) {
-  const params = await props.params;
+export async function generateStaticParams() {
+  return getAllPostSlugs();
+}
 
-  const data = await getPost(params.slug);
+export default async function Page({ params }: Props) {
+  const slug = (await params).slug;
+  const data = await getPost(slug);
 
   return (
     <section className="container mx-auto grid grid-cols-1 gap-12 md:grid-cols-4">
-      <SideCloumn
-        title="Nesw & Events"
-        postNumbers={3}
-        excludeSlug={params.slug}
-      />
+      <div className="col-span-1 space-y-6">
+        <SideCloumn
+          title={navigation.news.title}
+          postNumbers={3}
+          excludeSlug={slug}
+        />
+      </div>
       <div className="col-span-1 space-y-6 md:col-span-3">
-        <div className="w-full">
-          <div className="post-prose">
-            <h1>{data.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: data.contentHtml || '' }} />
-          </div>
+        <div className="post-prose">
+          <h1>{data.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: data.contentHtml || '' }} />
         </div>
       </div>
     </section>

@@ -1,13 +1,15 @@
 import Image from 'next/image';
-import members from '#/data/members';
+import { member } from '#/data/meta';
+
+const { title, list } = member;
 
 export default function Members() {
   return (
     <section className="container mx-auto py-12">
-      <h2 className="text-3xl font-bold text-black">Members</h2>
+      <h2 className="text-3xl font-bold text-black">{title}</h2>
       <div className="relative mt-8">
         <div className="flex justify-evenly space-x-6 overflow-x-auto">
-          {members.map((member, index) => (
+          {list.map((member, index) => (
             <div
               key={index}
               className="flex w-48 flex-shrink-0 flex-col items-center space-y-4 text-center"
@@ -27,7 +29,7 @@ export default function Members() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className="text-sm text-gray-600">{member.position}</p>
+                <p className="text-sm text-gray-800">{member.position}</p>
               </div>
             </div>
           ))}

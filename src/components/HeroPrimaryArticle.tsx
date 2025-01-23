@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface FeaturedArticleProps {
+interface PostCardProps {
   title: string;
   excerpt?: string;
   date: string;
@@ -12,7 +12,7 @@ interface FeaturedArticleProps {
   isHero?: boolean;
 }
 
-export default function FeaturedArticle({
+export default function PostCard({
   title,
   excerpt = '',
   date,
@@ -21,7 +21,7 @@ export default function FeaturedArticle({
   href,
   tags,
   isHero = false,
-}: FeaturedArticleProps) {
+}: PostCardProps) {
   return (
     <article className="relative">
       <Link href={href}>
@@ -55,7 +55,7 @@ export default function FeaturedArticle({
           </div>
           {date && <time className="block text-sm">{date}</time>}
         </div>
-        {excerpt && <p className="text-md line-clamp-2">{excerpt}</p>}
+        {excerpt && <p className="line-clamp-2 text-gray-800">{excerpt}</p>}
       </Link>
     </article>
   );

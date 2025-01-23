@@ -3,7 +3,7 @@ title: 'International Conference on Indo-Pacific Order and South China Sea Secur
 date: '2025-01-02'
 thumbnail: '/posts/international-conference-on-indo-pacific-order-and-south-china-sea-security-at-a-crossroads/img-01.jpg'
 excerpt: '於2024年9月23日由內政部指導，本中心與本校政治學系、本校海洋中心、本校韌性社會研究中心、及國立政治大學合辦「在十字路口的印太秩序與南海安全」國際研討會(International Conference on Indo-Pacific Order and South China Sea Security at a Crossroads)。'
-category: 'publications'
+category: 'news'
 tags:
 ---
 

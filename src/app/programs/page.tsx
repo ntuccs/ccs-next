@@ -1,11 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
+import { navigation } from '#/data/meta';
 
-import navigations from '#/data/navigations';
+const title = navigation.programs.title;
+
+export const metadata = {
+  title,
+  openGraph: {
+    title,
+    images: [`/api/og?title=${title}`],
+  },
+};
 
 export default function Page() {
   return (
     <div className="post-prose">
-      <h1>{navigations[1].text}</h1>
+      <h1>{title}</h1>
       <p>Latest update - September 2024</p>
       <p>
         Taiwan is at the forefront of US-China great power competition, offering

@@ -32,7 +32,7 @@ export default function NewsCard({
           />
         </div>
         <div className="flex flex-grow flex-col">
-          <h2 className="mb-4 text-2xl font-bold leading-tight text-gray-900">
+          <h2 className="mb-4 text-2xl font-bold leading-tight text-gray-800">
             {title}
           </h2>
           <div className="mb-4 flex items-center ">
@@ -48,7 +48,7 @@ export default function NewsCard({
               ))}
             {date && <time className="block text-sm">{date}</time>}
           </div>
-          <p className="line-clamp-2 text-base text-gray-600">{description}</p>
+          <p className="line-clamp-2 text-base text-gray-800">{description}</p>
         </div>
       </article>
     </Link>
