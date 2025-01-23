@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <div className="space-y-8">
       <h2 className="text-3xl font-bold text-black">{title}</h2>
-      <h3>Comming soon!</h3>
+      <h3>Comming soon!!</h3>
     </div>
   );
 }
