@@ -22,8 +22,8 @@ export default function NewsCard({
 }: NewsCardProps) {
   return (
     <Link href={slug} className="block">
-      <article className="group flex gap-6 rounded-md bg-white px-6 py-4 shadow-lg">
-        <div className="relative h-60 w-80 flex-shrink-0 overflow-hidden rounded">
+      <article className="group flex flex-col gap-6 rounded-md bg-white px-6 py-4 shadow-lg md:flex-row">
+        <div className="relative h-60 w-full flex-shrink-0 overflow-hidden rounded md:w-80">
           <Image
             src={imageUrl}
             alt={imageAlt}
@@ -32,7 +32,7 @@ export default function NewsCard({
           />
         </div>
         <div className="flex flex-grow flex-col">
-          <h2 className="mb-4 text-2xl font-bold leading-tight text-gray-800">
+          <h2 className="mb-4 text-xl font-bold leading-tight text-gray-800 md:text-2xl">
             {title}
           </h2>
           <div className="mb-4 flex items-center ">

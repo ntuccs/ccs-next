@@ -7,7 +7,7 @@ export default async function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="container mx-auto py-12">
+    <section className="container mx-auto py-6 md:py-12">
       {/* <SideColumn /> */}
       <div>{children}</div>
     </section>

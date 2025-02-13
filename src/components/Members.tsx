@@ -5,7 +5,7 @@ const { title, list } = member;
 
 export default function Members() {
   return (
-    <section className="container mx-auto py-12">
+    <section className="container mx-auto py-6 md:py-12">
       <h2 className="text-3xl font-bold text-black">{title}</h2>
       <div className="relative mt-8">
         <div className="flex justify-evenly space-x-6 overflow-x-auto">

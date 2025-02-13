@@ -29,9 +29,19 @@ export default {
             },
           },
         },
+        sm: {
+          css: {
+            h1: {
+              fontWeight: 600,
+            },
+          },
+        },
       },
       maxWidth: {
         '90%': '90%',
+      },
+      borderWidth: {
+        1: '1px',
       },
       keyframes: {
         fadeInUp: {

@@ -13,8 +13,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="post-prose">
-      <h1>{title}</h1>
+    <div className="post-prose text-justify">
+      <h1 className="text-2xl md:text-4xl">{title}</h1>
       <p>Latest update - September 2024</p>
       <p>
         Taiwan is at the forefront of US-China great power competition, offering
@@ -34,15 +34,16 @@ export default function Page() {
         <li>Rule-Based International Order and Maritime Security</li>
         <li>American Perspectives on China</li>
       </ol>
-      <h3>Director</h3>
-      <p>S. Philip Hsu</p>
+      <h2>Director</h2>
+      <h3>S. Philip Hsu</h3>
+      <p></p>
 
-      <h3>Deputy Director</h3>
-      <p>George Yin</p>
+      <h2>Deputy Director</h2>
+      <h3>George Yin</h3>
+      <p></p>
 
-      <h3>Senior Advisors</h3>
-
-      <h4>David Lee Ta-wei</h4>
+      <h2>Senior Advisors</h2>
+      <h3>David Lee Ta-wei</h3>
       <p>
         He is one of Taiwan's most distinguished diplomats and politicians. He
         served as the chairman of Taiwan's Straits Exchange Foundation (2020 and
@@ -58,7 +59,7 @@ export default function Page() {
         (Oxford University Press, 2000).
       </p>
 
-      <h4>Jacques DeLisle</h4>
+      <h3>Jacques DeLisle</h3>
       <p>
         He is the Stephen A. Cozen Professor of Law, Professor of Political
         Science, and Director of the Center for the Study of Contemporary China

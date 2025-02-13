@@ -9,4 +9,8 @@
   .post-prose {
     @apply prose m-auto max-w-90%;
   }
+
+  .post-prose-sm {
+    @apply prose m-auto max-w-full prose-headings:text-3xl;
+  }
 }

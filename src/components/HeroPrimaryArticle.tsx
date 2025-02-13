@@ -35,12 +35,12 @@ export default function PostCard({
           />
         </div>
         <h1
-          className={`mb-2 hover:text-primary ${isHero ? 'text-4xl' : 'text-2xl'} font-bold leading-tight tracking-tight`}
+          className={`mb-2 text-xl hover:text-primary md:text-2xl ${isHero ? 'md:text-3xl' : 'md:text-2xl'} font-bold leading-tight tracking-tight`}
         >
           {title}
         </h1>
         {/* <div>{category}</div> */}
-        <div className="mb-2 flex items-center ">
+        <div className="mb-2 flex items-center">
           <div>
             {tags &&
               tags?.length > 0 &&
