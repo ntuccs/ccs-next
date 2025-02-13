@@ -18,29 +18,17 @@ const copyright =
 
 export default function Footer() {
   return (
-    <footer className="border-t bg-primary text-white ">
+    <footer className="border-t bg-primary px-4 text-white md:px-0 ">
       <div className="container mx-auto py-6">
-        {/* <div className="container mx-auto grid grid-cols-2 gap-8 text-sm text-gray-800 md:grid-cols-4">
-        <div>
-          <h3 className="mb-4 font-bold">Topics</h3>
-          <ul className="space-y-2">
-            <li>Diplomacy</li>
-            <li>Environment</li>
-            <li>Politics</li>
-            <li>Security</li>
-            <li>Society</li>
-            <li>Economics</li>
-          </ul>
-        </div>
-      </div> */}
-
         {contactList.map(({ label, text }) => (
-          <div key={text} className="my-2 flex text-sm md:w-1/2">
-            <div className="font-semibold md:w-1/6">{label}</div>
+          <div
+            key={text}
+            className="mb-4 flex flex-col text-sm md:my-2 md:w-1/2  md:flex-row"
+          >
+            <div className="mb-1 font-semibold md:mb-0 md:w-1/6">{label}</div>
             <div className="tracking-wide text-white">{text}</div>
           </div>
         ))}
-
         <div className="mt-8 text-sm font-semibold tracking-wide">
           {copyright.replace('{year}', `${new Date().getFullYear()}`)}
         </div>

@@ -13,10 +13,10 @@ export const navigation = {
     slug: '/programs',
     title: 'The World & China Program',
   },
-  publications: {
-    slug: '/publications',
-    title: 'Publications',
-  },
+  // publications: {
+  //   slug: '/publications',
+  //   title: 'Publications',
+  // },
 };
 
 export const about = {

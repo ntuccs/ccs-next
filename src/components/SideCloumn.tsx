@@ -22,14 +22,14 @@ export default function SideCloumn({
     .filter((post) => (excludeSlug ? post.id !== excludeSlug : post))
     .slice(0, postNumbers);
   return (
-    <aside>
+    <aside className="order-last px-4 md:order-first md:px-0">
       <h2 className="mb-6 text-3xl font-bold text-black">{title}</h2>
       <ul className="space-y-8">
         {showLinks && (
           <Link
             key={navigation.programs.slug}
             href={navigation.programs.slug}
-            className="hover:text-red-900"
+            className="hidden hover:text-red-900 md:block"
           >
             <li>
               <p className="text-blackfont-semibold text-2xl  font-bold">

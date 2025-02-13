@@ -1,6 +1,7 @@
 import { navigation } from '#/data/meta';
 
-const title = navigation.publications.title;
+// const title = navigation.publications.title;
+const title = 'Publications';
 
 export const metadata = {
   title,

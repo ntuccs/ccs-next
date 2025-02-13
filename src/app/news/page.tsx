@@ -16,9 +16,9 @@ export default function Page() {
   const news = getPosts('news');
 
   return (
-    <div className="m-auto max-w-90% space-y-8">
+    <div className="m-auto max-w-full space-y-4 px-4 md:max-w-90% md:space-y-8 md:px-0">
       <h1 className="text-3xl font-bold text-black">{title}</h1>
-      <div className="animate-fadeInUp space-y-6">
+      <div className="space-y-6">
         {news.length >= 3 &&
           news.map(({ id, title, date, excerpt, thumbnail, tags }) => (
             <NewsCard

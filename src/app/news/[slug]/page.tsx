@@ -36,17 +36,17 @@ export default async function Page({ params }: Props) {
   const data = await getPost(slug);
 
   return (
-    <section className="container mx-auto grid grid-cols-1 gap-12 md:grid-cols-4">
-      <div className="col-span-1 space-y-6">
+    <section className="container mx-auto grid grid-cols-1 gap-6 px-4 md:grid-cols-4 md:gap-12 md:px-0">
+      <div className="order-last col-span-1 space-y-6 md:order-first">
         <SideCloumn
           title={navigation.news.title}
           postNumbers={3}
           excludeSlug={slug}
         />
       </div>
-      <div className="col-span-1 space-y-6 md:col-span-3">
-        <div className="post-prose">
-          <h1>{data.title}</h1>
+      <div className="order-first col-span-1 space-y-6 md:order-last md:col-span-3">
+        <div className="post-prose-sm md:post-prose">
+          <h1 className="">{data.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: data.contentHtml || '' }} />
         </div>
       </div>

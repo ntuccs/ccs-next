@@ -4,7 +4,7 @@ import Members from '#/components/Members';
 
 export default function Page() {
   return (
-    <main>
+    <main className="px-4 md:px-0">
       <Hero />
       <About />
       <Members />
