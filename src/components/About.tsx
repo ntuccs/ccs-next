@@ -11,7 +11,7 @@ export default function About() {
         <h3 className="mb-2 text-2xl font-bold leading-snug text-black">
           {website.title}
         </h3>
-        <div className="flex items-center justify-center md:block">
+        <div className="flex items-center justify-center md:hidden">
           <div className="w-full">
             <Image
               src="/about.jpg"
