@@ -111,6 +111,20 @@ function imagePathPlugin(postFolder: string) {
 }
 
 /**
+ * Custom remark plugin to handle image paths.
+ * @param {string} postFolder - The folder containing the post.
+ * @returns {Function} The remark plugin function.
+ */
+function linkPathPlugin(postFolder: string) {
+  return () => (tree: any) => {
+    visit(tree, 'link', (node) => {
+      const imageName = path.basename(node.url);
+      node.url = `/posts/${postFolder}/${imageName}`;
+    });
+  };
+}
+
+/**
  * Fetches post data by slug.
  * @param {string} slug - The slug of the post.
  * @returns {Promise<Post>} The post data.
@@ -124,6 +138,7 @@ export async function getPost(slug: string): Promise<Post> {
   // 使用 remark 將 Markdown 轉換為 HTML
   const processedContent = await remark()
     .use(imagePathPlugin(slug))
+    .use(linkPathPlugin(slug))
     .use(html)
     .process(content);
   const contentHtml = processedContent.toString();

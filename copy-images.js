@@ -4,10 +4,10 @@ const path = require('path');
 const postsDir = path.join(__dirname, 'src', 'posts');
 const publicDir = path.join(__dirname, 'public', 'posts');
 
-// 清空目标目录
+// Clean the target directory 
 fs.emptyDirSync(publicDir);
 
-// 复制图片
+// Copy images and assets
 fs.readdirSync(postsDir).forEach((postFolder) => {
   const postPath = path.join(postsDir, postFolder);
   if (fs.statSync(postPath).isDirectory()) {
@@ -16,7 +16,7 @@ fs.readdirSync(postsDir).forEach((postFolder) => {
 
     fs.readdirSync(postPath).forEach((file) => {
       const ext = path.extname(file).toLowerCase();
-      if (['.jpg', '.jpeg', '.png', '.gif'].includes(ext)) {
+      if (['.jpg', '.jpeg', '.png', '.gif', '.pdf'].includes(ext)) {
         fs.copyFileSync(
           path.join(postPath, file),
           path.join(publicPostPath, file),
