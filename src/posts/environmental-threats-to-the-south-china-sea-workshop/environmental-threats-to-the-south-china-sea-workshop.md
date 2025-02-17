@@ -4,7 +4,6 @@ date: '2025-01-05'
 thumbnail: '/posts/environmental-threats-to-the-south-china-sea-workshop/img-01.jpg'
 label: 'Partership with Oxford'
 excerpt: '本中心於3月18日下午辦理DEEP BLUE SCARS: Environmental Threats to the South China Sea Workshop，由本中心蔡季廷執行長主持。'
-isHero: true
 category: 'news'
 tags:
   - 'Panel Disccustion'
