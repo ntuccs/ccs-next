@@ -16,7 +16,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   );
   const data = (await res.json()) as { title: string; body: string };
 
-  const isOnDemand = Number(params.id) >= 3;
+  // const isOnDemand = Number(params.id) >= 3;
 
   return (
     <div className="grid grid-cols-6 gap-x-6 gap-y-3">
