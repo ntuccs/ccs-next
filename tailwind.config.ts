@@ -27,6 +27,11 @@ export default {
                 color: '#2b6cb0',
               },
             },
+            li: {
+              color: '#000',
+            },
+            // Customize the color of the numbered list
+            '--tw-prose-bullets': '#000',
           },
         },
         sm: {

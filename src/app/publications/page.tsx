@@ -13,9 +13,9 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="space-y-8">
-      <h2 className="text-3xl font-bold text-black">{title}</h2>
-      <h3>Comming soon!!</h3>
+    <div className="post-prose text-justify">
+      <h1 className="text-2xl md:text-4xl">{title}</h1>
+      <p>Underconstruction…</p>
     </div>
   );
 }
