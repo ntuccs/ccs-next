@@ -14,7 +14,7 @@ interface SideColumProps {
 export default function SideCloumn({
   title = 'Latest',
   showLinks = false,
-  postNumbers = 2,
+  postNumbers = 3,
   excludeSlug = '',
 }: SideColumProps) {
   const latestPosts = getPosts()
